@@ -1,14 +1,3 @@
-// adding one image when clicking.
-const myImage = document.querySelector("img");
-myImage.onclick = () => {
-    const mySrc = myImage.getAttribute("src");
-    if (mySrc === "images/firefox-icon.png") {
-        myImage.setAttribute("src", "images/firefox2.png");
-    } else {
-        myImage.setAttribute("src", "images/firefox-icon.png");
-    }
-};
-
 // Adding Change user or Welcome message.
 let myButton = document.querySelector("button");
 let myHeading = document.querySelector("h1");
@@ -16,12 +5,12 @@ let myHeading = document.querySelector("h1");
 function setUserName() {
     const myName = prompt("Please enter your name.");
     localStorage.setItem("name", myName);
-    myHeading.textContent = `Google site test, ${myName}`;
+    myHeading.textContent = `This is for you!, ${myName}`;
 }
 if (!localStorage.getItem("name")) {
     setUserName();
 } else {
     const storedName = localStorage.getItem("name");
-    myHeading.textContent = `Mozilla is cool, ${storedName}`;
+    myHeading.textContent = `This is for you!, ${storedName}`;
 }
 myButton.onclick = () => { setUserName(); };
